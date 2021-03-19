@@ -1,0 +1,14 @@
+
+नाेटः यस स्क‍्रिप्टले सबै कमेन्टहरु हटाइदिन्छ।
+
+१. File merge गर्नुपर्ने location मा pearl script copy गर्ने।
+२. तलकाे command चलाउने।
+ `perl latexpand.pl [मर्ज गर्नुपर्ने मुख्य फाइल (main input file)] > [मर्ज गरेकाे नयाँ फाइल/output file]`
+ 
+३. उदाहरणः
+ `perl latexpand.pl ‌multimedia_application.tex > multimedia_merged.tex `
+ 
+ जहाँ, 
+ 	multimedia_application.tex = मर्ज गर्नुपर्ने मुख्य फाइल (main input file),
+ 	multimedia_merged.tex = मर्ज गरेकाे नयाँ फाइल/output file]
+

@@ -1,0 +1,93 @@
+% !TeX spellcheck = en_US
+% !TEX TS-program = xelatex 
+\documentclass[a4paper, 12pt, twoside, titlepage]{book}
+\usepackage{./multimedia-book-style} %custom style with preamble
+
+\sloppy % \textnp{margin बाहिर गएकाे text लाई right ragged गर्ने।}
+
+
+% \includeonly {
+%./chapters/chapter-1},
+%{./chapters/chapter-2}, 
+%{./chapters/chapter-3}, 
+%{./chapters/chapter-4},
+%{./chapters/chapter-5},
+%{./chapters/chapter-6},
+%{./chapters/chapter-7},
+%{./chapters/chapter-8},
+%{./chapters/chapter-9},
+%}
+
+\begin{document}
+
+
+\title{\huge {Multimedia Application}}
+\author{Jeevan Poudel}
+\date{2021}
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%				    				@
+%         Front Matter		    	@
+%				    				@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\frontmatter
+\include{./titlepage/title-page}\thispagestyle{empty}
+\phantomsection
+
+
+\setcounter{secnumdepth}{5} %set section depth, starts with 0, default:3, 
+\setcounter{tocdepth}{3} %set TOC depth, default:2, 
+
+
+
+\tableofcontents \newpage\thispagestyle{empty}
+
+\listoffigures \addcontentsline{toc}{chapter}{\listfigurename} \newpage \thispagestyle{empty}
+
+\listoftables\addcontentsline{toc}{chapter}{List of Tables} \newpage \thispagestyle{empty}
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%			Main Matter				@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{./chapters/chapter-1} % Chapter-1: Multimedia System
+\include{./chapters/chapter-2} % Chapter-2: Sound and Audio
+\include{./chapters/chapter-3} % Chapter-3: Image and Graphics
+\include{./chapters/chapter-4} % Chapter-4: Video and Animation
+\include{./chapters/chapter-5} % Chapter-5: Data Compression
+\include{./chapters/chapter-6} % Chapter-6: Optical Storage Media
+\include{./chapters/chapter-7} % Chapter-7: Documents, Technologies and MHEG
+\include{./chapters/chapter-8} % Chapter-8: Advanced Technologies in Multimedia
+\include{./chapters/chapter-9} % Chapter-9: Multimedia Application
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% questions
+\cleardoublepage
+ \phantomsection
+ \addcontentsline{toc}{chapter}{Questions (2018 \& 2019)}
+\include{./chapters/questions}
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%			Back Matter				@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\backmatter
+
+ \nocite{*}
+ \renewcommand{\bibname}{Bibliography}
+ \phantomsection
+ \addcontentsline{toc}{chapter}{Bibliography} % add this to toc
+ \printbibliography %prints bibliography list
+
+
+\end{document}

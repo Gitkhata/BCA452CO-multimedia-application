@@ -1,0 +1,205 @@
+%\usepackage[utf8]{inputenc}
+
+% Style for 'Multimedia'
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%			Unicode Suport 			@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	
+\usepackage{fontspec}  % for xelatex
+\usepackage{microtype}
+\usepackage{xltxtra} % for xelatex
+\usepackage{polyglossia} % multi language
+\usepackage{dirtytalk} % quotation
+
+\setdefaultlanguage{english}
+
+\setotherlanguage{hindi}
+\newfontfamily\devanagarifont[Script=Devanagari]{Shobhika} % Shobhika, Mukta, Kalimati, Lohit Devanagari, Lohit Nepali
+
+\defaultfontfeatures{Ligatures=TeX}
+
+\newcommand{\textnp}{\texthindi}
+\newenvironment{nepali}{\begin{hindi}}{\end{hindi}}
+
+%%%%%%%%%\LaTeXe end %%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multicol}
+\usepackage{booktabs} %for book style table 
+\usepackage{enumerate} 
+\usepackage{graphicx}
+\usepackage{listings} %for source code listing
+\usepackage[toc]{appendix}
+\usepackage[hyphens]{url}
+\graphicspath{ {./graphics/} }
+\usepackage{float}
+\usepackage{afterpage}
+
+\usepackage{mathtools}
+\usepackage{lipsum}	% generate lorem ipsum dummy text
+\usepackage{gensymb}
+\usepackage{textcomp}
+
+\usepackage{multirow}
+\usepackage{lscape}
+
+
+\usepackage{pdfpages} %include pdf
+
+\usepackage{csquotes} % for quotation
+\usepackage{framed} % display box or frame
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%		Code Listing	 			@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{xml}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=xml}
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ 
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%			Math		 			@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+\usepackage{cancel} %cancel in math. Strike through word, equation, expression, etc.
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math} %unicode character inside math environment
+\usepackage{amsfonts}
+
+%\usepackage[ruled]{algorithm2e}
+\usepackage[]{algorithm2e} % provide environment for writing algorithms
+
+
+\usepackage[acronym]{glossaries}
+\usepackage{glossary-mcols}
+
+\makeglossaries
+
+\usepackage{lscape} %make single page landscape
+% \usepackage{parskip} % do not indent paragraph
+% \usepackage{charter} % alternative to default latex font
+
+
+% force all text to continue to the next line when using style=nextline in description lists with enumitem.
+
+\usepackage{enumitem} %control layout of itemize, enumerate, description
+\setlist[description]{
+	style=nextline,
+	leftmargin=0pt,
+} %Global setup. Local setup can be used
+
+%custom `steps' environment to generate step 1, step 2 ...
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{leftmargin=2cm, label = \textit{Step \arabic*}:}
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%			Header/Footer			@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\usepackage[Rejne]{fncychap} % seven(Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup) predefined chapter heading 
+%\usepackage[raggedright]{titlesec} % prevent section going past margin
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%									   %
+% Fancy header / footer				   %
+%									   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}\pagestyle{fancy} %for fancy headers and footers
+\fancyhf{}
+\fancyhead[RE]{\it{\uppercase{\leftmark}}}
+\fancyhead[LO]{\it{\uppercase{\rightmark}}}
+\fancyhead[LE,RO]{\thepage}
+\fancyfoot{}
+%%%%%%%%%%%%%%%%%%headeer/ footer end%%%
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%			Bibliography			@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+%stle options: ieee, numeric, alphabetic, apa, nature, science
+\usepackage[backend=biber, bibencoding=auto, style=apa, sorting=none,
+]{biblatex} \addbibresource{./references/multimedia-application-ref.bib}
+
+
+
+\cleardoublepage
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%			TOC Related				@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	
+\renewcommand*\contentsname{Table of Contents} %rename toc title
+\setcounter{secnumdepth}{5} %document depth section, subsection aadi ko number hataune in TOC
+%----------------------------------------------
+
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%			Table Related			@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	
+\usepackage{array}
+\usepackage{longtable} % insert a very long table, which takes up two or more pages
+\usepackage[skip=0.8\baselineskip]{caption}  %gap between caption and table
+%\setlength{\arrayrulewidth}{1mm}
+\setlength{\tabcolsep}{18pt} % table cell space
+\renewcommand{\arraystretch}{1.5} %table row gap
+% ------------------------------------------
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%									@
+%			Hyperlinks	 			@
+%									@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\usepackage[linktoc=all]{hyperref}
+\hypersetup{
+	colorlinks=true, 
+	citecolor=red,
+	linkcolor=black, %default: red, change to black for printing
+	filecolor=magenta,      
+	urlcolor=black, % print गर्ने बेलामा कालाे (black) बनाउने
+%	bookmarks=true,
+	breaklinks=true,
+	bookmarksnumbered=true,
+%	pdfpagelabels=true
+}
+%\urlstyle{same} %this makes url look similar to normal text.
